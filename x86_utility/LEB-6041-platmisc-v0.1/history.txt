@@ -1,0 +1,7 @@
+Version history
+
+Version	Date		Description
+======= ========================================================================
+V0.1	20181004  	1. init. version
+			2. Support DOS and Linux driver mode utility
+                	3. Support Lm-sensor3 config file

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- property sub-directory -->
+<property>
+    <scope>property</scope>
+    <description>property 4G driver for NCB-1510</description>
+    <default_option>v1.0</default_option>
+    <opt>
+    	<!-- option: opt option -->
+        <option>v1.0</option>
+
+        <!-- Description: put your version description here -->
+        <Description>Initial version</Description>
+
+        <!-- src_dir: offset related to <project_name>/property -->
+        <src_dir>4g</src_dir>
+
+	<!-- howto: how to build source code -->
+	<howto></howto>
+
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="drv">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>../../../../../../usr/src/linux/modules</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>cdc_mbim.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order></target_order>
+	</target>
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="drv">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>../../../../../../usr/src/linux/modules</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>cdc-wdm.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order></target_order>
+	</target>
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="drv">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>../../../../../../usr/src/linux/modules</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>cdc_ncm.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order></target_order>
+	</target>
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="drv">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>../../../../../../usr/src/linux/modules</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>usbnet.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order></target_order>
+	</target>
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="drv">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>../../../../../../usr/src/linux/modules</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>qmi_wwan.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order></target_order>
+	</target>
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="drv">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>../../../../../../usr/src/linux/modules</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>qcserial.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order></target_order>
+	</target>
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="drv">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>../../../../../../usr/src/linux/modules</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>usb_wwan.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order></target_order>
+	</target>
+
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="sh">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>init_4g_driver.sh</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order>41a</target_order>
+	</target>
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="sh">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename></filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order>50a</target_order>
+	</target>
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="bin">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>4g_driver.tgz</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order></target_order>
+	</target>
+
+    </opt>
+</property>
+

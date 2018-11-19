@@ -1,0 +1,1 @@
+cmd_/home/bios/Desktop/W83667F/w83627ehf.ko.unsigned := ld -r -m elf_x86_64 -T /usr/src/kernels/2.6.32-358.el6.x86_64/scripts/module-common.lds --build-id -o /home/bios/Desktop/W83667F/w83627ehf.ko.unsigned /home/bios/Desktop/W83667F/w83627ehf.o /home/bios/Desktop/W83667F/w83627ehf.mod.o 

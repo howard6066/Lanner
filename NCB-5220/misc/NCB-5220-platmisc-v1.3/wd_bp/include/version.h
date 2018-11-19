@@ -1,0 +1,6 @@
+#define PLATFORM_NAME "NCB-5220"
+#define CODE_VERSION "V1.1 2018-08-16"
+
+
+
+

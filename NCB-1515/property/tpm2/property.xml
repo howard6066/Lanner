@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- property sub-directory -->
+<property>
+    <scope>property</scope>
+    <description>Trusted Platform Module 2.0 test</description>
+    <default_option>v1.0</default_option>
+    <opt>
+    	<!-- option: opt option -->
+        <option>v1.0</option>
+
+        <!-- Description: put your version description here -->
+        <Description>Initial version</Description>
+
+        <!-- src_dir: offset related to <project_name>/property -->
+        <src_dir>tpm2/v1.0</src_dir>
+
+	<!-- howto: how to build source code -->
+	<howto></howto>
+
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="sh">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>get_tpm_2.0_information.sh</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order>59a</target_order>
+	</target>
+	<target type="bin">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>lSkCmdxx</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+	</target>
+    </opt>
+</property>
+

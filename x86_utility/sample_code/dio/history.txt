@@ -1,0 +1,12 @@
+Version history
+
+Version	Date		Description
+======= ========================================================================
+V1.0	20150427    1. Initial version, support DOS and Linux 2.4 and 2.6
+		     2. Add definition in ioaccess.h to comfig DIO4-1 usage
+		    	//Modify by usage --start
+				#define DIO_4_PIN_TYPE 0//0:output 1:input
+				#define DIO_3_PIN_TYPE 0//0:output 1:input
+				#define DIO_2_PIN_TYPE 0//0:output 1:input
+				#define DIO_1_PIN_TYPE 0//0:output 1:input
+        //Modify by usage --start

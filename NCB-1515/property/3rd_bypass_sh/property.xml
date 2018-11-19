@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- property sub-directory -->
+<property>
+    <scope>property</scope>
+    <description>property 3rd_bypass script for NCB-1510</description>
+    <default_option>v1.0</default_option>
+    <opt>
+    	<!-- option: opt option -->
+        <option>v1.0</option>
+
+        <!-- Description: put your version description here -->
+        <Description>Initial version</Description>
+
+        <!-- src_dir: offset related to <project_name>/property -->
+        <src_dir>3rd_bypass_sh</src_dir>
+
+	<!-- howto: how to build source code -->
+	<howto></howto>
+
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="sh">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>3rd_bypass.sh</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order>81a</target_order>
+	</target>
+
+    </opt>
+</property>
+

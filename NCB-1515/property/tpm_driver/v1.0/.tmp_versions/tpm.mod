@@ -1,0 +1,2 @@
+/home/factory_testbed/project/NCB-1515/property/tpm_driver/v1.0/tpm.ko
+/home/factory_testbed/project/NCB-1515/property/tpm_driver/v1.0/tpm-interface.o /home/factory_testbed/project/NCB-1515/property/tpm_driver/v1.0/tpm-dev.o /home/factory_testbed/project/NCB-1515/property/tpm_driver/v1.0/tpm-sysfs.o /home/factory_testbed/project/NCB-1515/property/tpm_driver/v1.0/tpm-chip.o /home/factory_testbed/project/NCB-1515/property/tpm_driver/v1.0/tpm2-cmd.o

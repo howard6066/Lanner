@@ -1,0 +1,236 @@
+/*******************************************************************************
+
+  drv_main.c : Main code of Linux driver for Lanner platform Status LED program
+
+  Lanner Platform Miscellaneous Utility
+  Copyright(c) 2010 Lanner Electronics Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer,
+     without modification.
+  2. Redistributions in binary form must reproduce at minimum a disclaimer
+     similar to the "NO WARRANTY" disclaimer below ("Disclaimer") and any
+     redistribution must be conditioned upon including a substantially
+     similar Disclaimer requirement for further binary redistribution.
+  3. Neither the names of the above-listed copyright holders nor the names
+     of any contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  Alternatively, this software may be distributed under the terms of the
+  GNU General Public License ("GPL") version 2 as published by the Free
+  Software Foundation.
+
+  NO WARRANTY
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTIBILITY
+  AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+  THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR SPECIAL, EXEMPLARY,
+  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+  IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+  THE POSSIBILITY OF SUCH DAMAGES.
+*******************************************************************************/
+
+
+/* Standard in kernel modules */
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/fs.h>
+#include <linux/sched.h>
+#include <linux/pci.h>
+#include <asm/io.h>
+#include <linux/delay.h>
+#include <linux/spinlock.h>
+#include <asm/uaccess.h>
+#include "../include/led_ioctl.h"
+#include "../include/ioaccess.h"
+#include "../include/version.h"
+#ifndef LINUX_VERSION_CODE
+#include <linux/version.h>
+#else
+#define KERNEL_VERSION(a,b,c) (((a) << 16) + ((b) << 8) + (c))
+#endif
+
+/*
+ * Device Major Number
+ */
+#define LED_MAJOR 246
+
+/*
+ * Is the device opened right now?
+ * Prevent to access the device in the same time
+ */
+static int Device_Open = 0;
+static DEFINE_SPINLOCK(led_lock);
+
+#if ( LINUX_VERSION_CODE < KERNEL_VERSION(2,6,36) )
+static int led_ioctl(struct inode *inode, struct file *file, unsigned int cmd, unsigned long arg)
+#else
+static long led_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
+#endif
+
+{
+	int value;
+//cloud-test	if( copy_from_user(&value, arg, sizeof(value)))
+//cloud-test		return -EFAULT;
+        value = arg;  //cloud-test 
+        switch(cmd)
+        {
+                case IOCTL_LED_SET_STATUS:
+                        switch(value)
+                        {                            
+                          case LED_SET_STATUS_1:
+                               set_led_status_1();
+                          break;                                
+                        
+                         	case LED_SET_STATUS_2:   
+                         		   set_led_status_2();
+                        	break; 
+								
+                        	case LED_SET_STATUS_3:
+                               set_led_status_3(); 
+                          break;  
+                   
+                        	case LED_SET_STATUS_4:
+                              set_led_status_4();
+                          break;                                
+
+			case LED_PIN_1:
+			    set_led_pin_1();
+			break;	
+			case LED_PIN_2:
+			    set_led_pin_2();
+			break;	
+			case LED_PIN_3:
+			    set_led_pin_3();
+			break;	
+			case LED_PIN_4:
+			    set_led_pin_4();
+			break;	
+			case LED_PIN_5:
+			    set_led_pin_5();
+			break;	
+			case LED_PIN_6:
+			    set_led_pin_6();
+			break;	
+			case LED_PIN_7:
+			    set_led_pin_7();
+			break;	
+			case LED_PIN_8:
+			    set_led_pin_8();		
+			break;	
+                              		
+                          default:
+//cloud-test                              return -EOPNOTSUPP;
+                          return  2;   //cloud-test 
+                        }
+                        break;
+                default:
+//cloud-test                    return -EOPNOTSUPP;
+                return  3;  //cloud-test
+        }
+        return 0;
+
+
+}
+
+/*
+ * This function is called whenever a process attempts to
+ * open the device file
+ */
+static int led_open(struct inode * inode, struct file * file)
+{
+	/* we don't want to talk to two processes at the same time */
+	if(Device_Open) return -EBUSY;
+	Device_Open++;
+	/* Make sure that the module isn't removed while the file
+	 * is open by incrementing the usage count (the number of
+	 * opened references to the module,if it's zero emmod will
+	 * fail)
+	 */
+	return 0;
+}
+
+/*
+ * This function is called when a process closes the device file.
+ */
+static int led_release(struct inode * inode, struct file * file)
+{
+	/* ready for next caller */
+	Device_Open--;
+	/* Decrement the usage count, otherwise once you opened the file
+	 * you'll never get rid of the module.
+	 */
+	return 0;
+}
+
+/*
+ * This structure will hold the functions to be called
+ * when a process does something to the device we created.
+ * Since a pointer to this structure is kept in the
+ * devices table, it can't be local to init_module.
+ * NULL is for unimplemented functions.
+ */
+#if defined(OLDKERNEL)
+static struct file_operations led_fops = {
+	owner:		THIS_MODULE,
+	read:		NULL,
+	write:		NULL,
+	ioctl:		led_ioctl,
+	open:		led_open,
+	release:	led_release,
+};
+#else
+static const struct file_operations led_fops = {
+	//tadd++Start
+#if ( LINUX_VERSION_CODE < KERNEL_VERSION(2,6,36) )
+	.ioctl		= led_ioctl,
+#else
+	.unlocked_ioctl		= led_ioctl,
+#endif
+//tadd++end	
+	.open		= led_open,
+	.release	= led_release,
+};
+#endif
+
+int led_init(void)
+{
+	/*
+	 * Register the character device
+	 */
+	if(register_chrdev(LED_MAJOR, "led_drv", &led_fops))
+	{
+		printk("led_drv : unable to get major %d\n", LED_MAJOR);
+		return -EIO;
+	}
+	led_gpio_init();
+	spin_lock_init(&led_lock);
+	printk("Lanner Platform <<%s>> Status LED Driver Version %s -- loaded\n", PLATFORM_NAME, CODE_VERSION);
+	return 0;
+}
+
+/*
+ * Cleanup - unregister the appropriate file from /proc
+ */
+void led_exit(void)
+{
+	/* Unregister the device */
+	unregister_chrdev(LED_MAJOR, "led_drv");
+	/* If there's an error, report it */
+	printk("Lanner Platform Status LED Driver -- Unloaded\n");
+}
+
+module_init(led_init);
+module_exit(led_exit);
+
+MODULE_AUTHOR("Lanner SW");
+MODULE_DESCRIPTION("Lanner Platform Status LED Driver");
+MODULE_LICENSE("Dual BSD/GPL");

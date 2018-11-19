@@ -1,0 +1,85 @@
+/*******************************************************************************
+
+  ioaccess.h : function declaration file for Lanner platform Status LED program 
+
+  Lanner Platform Miscellaneous Utility
+  Copyright(c) 2010 Lanner Electronics Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer,
+     without modification.
+  2. Redistributions in binary form must reproduce at minimum a disclaimer
+     similar to the "NO WARRANTY" disclaimer below ("Disclaimer") and any
+     redistribution must be conditioned upon including a substantially
+     similar Disclaimer requirement for further binary redistribution.
+  3. Neither the names of the above-listed copyright holders nor the names
+     of any contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+
+  Alternatively, this software may be distributed under the terms of the
+  GNU General Public License ("GPL") version 2 as published by the Free
+  Software Foundation.
+
+  NO WARRANTY
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTIBILITY
+  AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+  THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR SPECIAL, EXEMPLARY,
+  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+  IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+  THE POSSIBILITY OF SUCH DAMAGES.
+
+*******************************************************************************/
+
+
+#ifndef DJGPP
+
+#ifdef __FreeBSD__
+
+#define inportb(x) inb(x)
+#define outportb(x, y) outb(x, y)
+#define inportl(x) inl(x)
+#define outportl(x, y) outl(x, y)
+
+#else
+
+#define inportb(x) inb_p(x)
+#define outportb(x, y) outb_p(y, x)
+#define inportl(x) inl_p(x)
+#define outportl(x, y) outl_p(y, x)
+
+#endif
+#endif
+
+
+
+
+void enter_io_config(void);
+void exit_io_config(void);
+int read_io_reg(int LDN, int reg);
+int write_io_reg(int LDN, int reg, int value);
+
+void set_led_status_1(void);
+void set_led_status_2(void);
+void set_led_status_3(void);
+void set_led_status_4(void);
+
+void set_led_pin_1(void);
+void set_led_pin_2(void);
+void set_led_pin_3(void);
+void set_led_pin_4(void);
+void set_led_pin_5(void);
+void set_led_pin_6(void);
+void set_led_pin_7(void);
+void set_led_pin_8(void);
+
+void led_gpio_init(void);
+

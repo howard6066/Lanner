@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- property sub-directory -->
+<property>
+    <scope>property</scope>
+    <description>Tpm driver for kernel-2.6.35</description>
+    <default_option>v1.0</default_option>
+    <opt>
+    	<!-- option: opt option -->
+        <option>v1.0</option>
+
+        <!-- Description: put your version description here -->
+        <Description>Initial version</Description>
+
+        <!-- src_dir: offset related to <project_name>/property -->
+        <src_dir>tpm_driver/v1.0</src_dir>
+
+	<!-- howto: how to build source code -->
+	<howto>make clean;make</howto>
+
+        <!-- target: multiple define is valid, sh as example -->
+	<target type="sh">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>init_tpm.sh</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+
+            <!-- target_order: executing order of this script -->
+	    <target_order>38b</target_order>
+	</target>
+	<target type="bin">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>tpm.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+	</target>
+	<target type="bin">
+	    <!-- target_in_src_file: shell script filename -->
+	    <offset_in_src_dir>.</offset_in_src_dir>
+
+	    <!-- filename: filename -->
+	    <filename>tpm_tis.ko</filename>
+
+            <!-- target_subdir: sub-dir related to target  -->
+	    <target_subdir>Test/</target_subdir>
+	</target>
+
+    </opt>
+</property>
+

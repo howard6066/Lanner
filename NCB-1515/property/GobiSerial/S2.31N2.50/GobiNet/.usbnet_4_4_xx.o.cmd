@@ -1,0 +1,11 @@
+cmd_/home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.o := gcc -Wp,-MD,/home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/.usbnet_4_4_xx.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-redhat-linux/4.8.5/include -I/home/factory_testbed/build/linux-3.6.11-4.fc16_3.6.11_x86_64.config/arch/x86/include -Iarch/x86/include/generated -Iinclude  -include /home/factory_testbed/build/linux-3.6.11-4.fc16_3.6.11_x86_64.config/include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -Os -m64 -mno-sse -mpreferred-stack-boundary=3 -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -fstack-protector -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_AVX=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -Wframe-larger-than=2048 -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(usbnet_4_4_xx)"  -D"KBUILD_MODNAME=KBUILD_STR(GobiNet)" -c -o /home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.o /home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.c
+
+source_/home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.o := /home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.c
+
+deps_/home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.o := \
+    $(wildcard include/config/pm.h) \
+  include/linux/version.h \
+
+/home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.o: $(deps_/home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.o)
+
+$(deps_/home/factory_testbed/project/NCB-1515/property/GobiSerial/S2.31N2.50/GobiNet/usbnet_4_4_xx.o):

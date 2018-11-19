@@ -1,0 +1,1 @@
+cmd_/home/factory_testbed/project/NCB-1515/property/bcmdhd/v1.0/bcmdhd.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/factory_testbed/project/NCB-1515/property/bcmdhd/v1.0/bcmdhd.ko /home/factory_testbed/project/NCB-1515/property/bcmdhd/v1.0/bcmdhd.o /home/factory_testbed/project/NCB-1515/property/bcmdhd/v1.0/bcmdhd.mod.o

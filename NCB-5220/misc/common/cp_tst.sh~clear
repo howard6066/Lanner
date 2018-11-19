@@ -1,0 +1,32 @@
+#!/bin/bash
+
+. /usr/bin/common_log.sh
+SKIP_BURNIN_TEST
+
+ECHO "CASE OPEN Clear...`date "+%Y/%m/%d %H:%M:%S"`"
+ECHO "Version 1.0"
+ECHO "-----------------------------------------------"
+
+#absolute path in USB
+TEST_PATH=/Test
+
+#insert driver module
+insmod $TEST_PATH/cp_drv.ko
+
+#make device node
+mknod /dev/cp_drv c 245 0 
+
+#wait 1 seconds
+sleep 1
+
+#run cp_tst
+buf=`$TEST_PATH/cp_tst`
+ECHO "$buf"
+ECHO_SUMMARY "CASE STATUS CLEAR PASS"
+
+#remove driver
+rmmod cp_drv
+
+#wait 1 seconds
+sleep 1
+

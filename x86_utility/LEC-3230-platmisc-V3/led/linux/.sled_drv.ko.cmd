@@ -1,0 +1,1 @@
+cmd_/home/max/Desktop/sled/linux/sled_drv.ko := ld -r -m elf_i386 -T /usr/src/kernels/3.3.4-5.fc17.i686.PAE/scripts/module-common.lds --build-id  -o /home/max/Desktop/sled/linux/sled_drv.ko /home/max/Desktop/sled/linux/sled_drv.o /home/max/Desktop/sled/linux/sled_drv.mod.o

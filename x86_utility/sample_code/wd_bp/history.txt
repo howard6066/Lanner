@@ -1,0 +1,6 @@
+Version history
+
+Version	Date		Description
+======= ========================================================================
+V1.0	  20160718    1. Initial version, support DOS/FreeBSD 8.0 and Linux 2.4,2.6 and 3.0
+											Verify CentOS6.4 2.6.32 OK

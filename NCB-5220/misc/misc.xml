@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- misc sub-directory -->
+<misc>
+    <!-- bios option -->
+    <scope>miscellaneous</scope>
+    <default_option>v1.0</default_option>
+    <opt>
+    	<!-- option: opt option -->
+        <option>v1.0</option>
+
+        <!-- Description: put your version description here -->
+        <Description>Initial version</Description>
+
+        <!-- src_dir: MUST match to sub-dir name -->
+        <src_dir>misc/NCB-5220-platmisc-v1.1</src_dir>
+
+	<!-- howto: how to build source code -->
+	<howto>make clean;make</howto>
+
+	<sub_opt package_name="sled">
+        <Desc>Status LED Test</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+	    <target type="sh">
+	        <!-- target_in_src_file: shell script filename -->
+	        <offset_in_src_dir>./../common</offset_in_src_dir>
+
+	        <!-- filename: filename -->
+	        <filename>sled_tst.sh</filename>
+
+	        <!-- target_subdir: sub-dir related to target  -->
+	        <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+	        <target_order>54a</target_order>
+
+	    </target>
+            <!-- target: multiple define is valid, elf as example -->
+	    <target type="bin">
+		<!-- target_in_src_file: shell script filename -->
+	    	<offset_in_src_dir>./sled/bin</offset_in_src_dir>
+
+            	<!-- filename: filename -->
+	    	<filename>sled_tst</filename>
+
+            	<!-- target_subdir: sub-dir related to target  -->
+	    	<target_subdir>Test/</target_subdir>
+	    </target>
+
+            <!-- target: multiple define is valid, elf as example -->
+	    <target type="bin">
+		<!-- target_in_src_file: shell script filename -->
+	    	<offset_in_src_dir>./sled/bin</offset_in_src_dir>
+
+            	<!-- filename: filename -->
+	    	<filename>sled_drv.ko</filename>
+
+            	<!-- target_subdir: sub-dir related to target  -->
+	    	<target_subdir>Test/</target_subdir>
+	    </target>
+	</sub_opt>
+	<sub_opt package_name="sw_btn">
+        <Desc>Software Reset Button Test</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+	    <target type="sh">
+	        <!-- target_in_src_file: shell script filename -->
+	        <offset_in_src_dir>./../common</offset_in_src_dir>
+
+	        <!-- filename: filename -->
+	        <filename>sw_btn_tst.sh</filename>
+
+	        <!-- target_subdir: sub-dir related to target  -->
+	        <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+	        <target_order>57a</target_order>
+
+	    </target>
+            <!-- target: multiple define is valid, elf as example -->
+	    <target type="bin">
+		<!-- target_in_src_file: shell script filename -->
+	    	<offset_in_src_dir>./sw_btn/bin</offset_in_src_dir>
+
+            	<!-- filename: filename -->
+	    	<filename>btn_tst</filename>
+
+            	<!-- target_subdir: sub-dir related to target  -->
+	    	<target_subdir>Test/</target_subdir>
+	    </target>
+	    <target type="bin">
+		<!-- target_in_src_file: shell script filename -->
+	    	<offset_in_src_dir>./sw_btn/bin</offset_in_src_dir>
+
+            	<!-- filename: filename -->
+	    	<filename>btn_drv.ko</filename>
+
+            	<!-- target_subdir: sub-dir related to target  -->
+	    	<target_subdir>Test/</target_subdir>
+	    </target>
+	</sub_opt>
+
+
+	<sub_opt package_name="dio">
+        <Desc>DIO Test</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+	    <target type="sh">
+	        <!-- target_in_src_file: shell script filename -->
+	        <offset_in_src_dir>./../common</offset_in_src_dir>
+
+	        <!-- filename: filename -->
+	        <filename>dio_tst.sh</filename>
+
+	        <!-- target_subdir: sub-dir related to target  -->
+	        <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+	        <target_order>58a</target_order>
+
+	    </target>
+            <!-- target: multiple define is valid, elf as example -->
+	    <target type="bin">
+		<!-- target_in_src_file: shell script filename -->
+	    	<offset_in_src_dir>./dio/bin</offset_in_src_dir>
+
+            	<!-- filename: filename -->
+	    	<filename>dio_tst</filename>
+
+            	<!-- target_subdir: sub-dir related to target  -->
+	    	<target_subdir>Test/</target_subdir>
+	    </target>
+	    <target type="bin">
+		<!-- target_in_src_file: shell script filename -->
+	    	<offset_in_src_dir>./dio/bin</offset_in_src_dir>
+
+            	<!-- filename: filename -->
+	    	<filename>dio_drv.ko</filename>
+
+            	<!-- target_subdir: sub-dir related to target  -->
+	    	<target_subdir>Test/</target_subdir>
+	    </target>
+	</sub_opt>
+
+         <sub_opt package_name="eeprom">
+        <Desc>Read/Write EEPROM Test</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+            <target type="sh">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./../common</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>eep_tst.sh</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+                <target_order>84a</target_order>
+
+            </target>
+            <!-- target: multiple define is valid, elf as example -->
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./eep/bin</offset_in_src_dir>
+
+                    <!-- filename: filename -->
+                <filename>eep_tst</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+
+            <!-- target: multiple define is valid, elf as example -->
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./eep/bin</offset_in_src_dir>
+
+                    <!-- filename: filename -->
+                <filename>eep_drv.ko</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+
+        </sub_opt>
+
+         <sub_opt package_name="case_op">
+        <Desc>Case Open Status Utility</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+            <target type="sh">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./../common</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>cp_tst.sh</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+                <target_order>59a</target_order>
+
+            </target>
+            <!-- target: multiple define is valid, elf as example -->
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./case_op/bin</offset_in_src_dir>
+
+                    <!-- filename: filename -->
+                <filename>cp_tst</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./case_op/bin</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>cp_drv.ko</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+        </sub_opt>
+
+         <sub_opt package_name="pmb">
+        <Desc>pmbus tool for NCB-5220</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+            <target type="sh">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./../common</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>pmbus.sh</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+                <target_order>70a</target_order>
+
+            </target>
+            <!-- target: multiple define is valid, elf as example -->
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./pmbus</offset_in_src_dir>
+
+                    <!-- filename: filename -->
+                <filename>pms</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+        </sub_opt>
+
+         <sub_opt package_name="HWM">
+        <Desc>hwmon tool</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+            <target type="sh">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./../common</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>hwmon.sh</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+                <target_order>71a</target_order>
+
+            </target>
+            <!-- target: multiple define is valid, elf as example -->
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./hwm</offset_in_src_dir>
+
+                    <!-- filename: filename -->
+                <filename>hwm</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+        </sub_opt>
+
+         <sub_opt package_name="LCM">
+        <Desc>LCM tool</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+            <target type="sh">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./../common</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>lcm_tst.sh</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+                <target_order>60a</target_order>
+
+           </target>
+            <!-- target: multiple define is valid, elf as example -->
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./lcm/bin</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>lcm_tst</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./lcm/bin</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>lcm_drv.ko</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+        </sub_opt>
+
+        <sub_opt package_name="watchdog">
+        <Desc>watchdog tool</Desc>
+            <!-- target: multiple define is valid, sh as example -->
+            <target type="sh">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./../common</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>wd_tst.sh</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+
+                <!-- target_order: executing order of this script -->
+                <target_order>61a</target_order>
+
+           </target>
+            <!-- target: multiple define is valid, elf as example -->
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./wd_bp/bin</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>wd_tst</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+            <target type="bin">
+                <!-- target_in_src_file: shell script filename -->
+                <offset_in_src_dir>./wd_bp/bin</offset_in_src_dir>
+
+                <!-- filename: filename -->
+                <filename>wd_drv.ko</filename>
+
+                <!-- target_subdir: sub-dir related to target  -->
+                <target_subdir>Test/</target_subdir>
+            </target>
+        </sub_opt>
+
+    </opt>
+</misc>
+

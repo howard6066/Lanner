@@ -1,0 +1,3 @@
+#define PLATFORM_NAME "LEC-6041"
+#define CODE_VERSION "V0.1 2018-10-04"
+

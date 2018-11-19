@@ -1,0 +1,6 @@
+TARGET=N1515MEP
+all: $(TARGET)
+$(TARGET):N1515MEP.c
+	gcc -o $(TARGET) N1515MEP.c
+clean:
+	rm -rf $(TARGET)

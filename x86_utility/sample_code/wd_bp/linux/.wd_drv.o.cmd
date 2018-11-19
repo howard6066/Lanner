@@ -1,0 +1,1 @@
+cmd_/home/factory_testbed/project/x86_utility/sample_code/wd_bp/linux/wd_drv.o := ld -m elf_x86_64   -r -o /home/factory_testbed/project/x86_utility/sample_code/wd_bp/linux/wd_drv.o /home/factory_testbed/project/x86_utility/sample_code/wd_bp/linux/drv_main.o /home/factory_testbed/project/x86_utility/sample_code/wd_bp/linux/ioaccess.o 

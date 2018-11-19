@@ -1,0 +1,5 @@
+Version history
+
+Version	Date						Description
+======= =============== ========================================================
+V1.0		05/30, 2013    1. Initial version, support DOS/FreeBSD 8.0 and Linux 2.4 and 2.6 and 3.x

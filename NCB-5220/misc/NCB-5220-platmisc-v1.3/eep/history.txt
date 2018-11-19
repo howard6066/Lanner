@@ -1,0 +1,8 @@
+Version history
+
+Version	Date		Description
+======= ======================================================================== 
+V1.2	20180816   	1. Remove FreeBSD support
+			2. Support Dynamic major number select	
+			
+V1.0    20180424    Initial version for eeprom program 		   

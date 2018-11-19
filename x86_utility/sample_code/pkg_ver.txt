@@ -1,0 +1,24 @@
+*************NCB-1515-platmisc-****************************************
+v1.0 20180416  Init version
+
+wd_bp
+=======================
+V1.0 20180416. verify pass under CentOs7.3 
+
+sw_btn
+=======================
+V1.0 20180416. verify pass under CentOs7.3 
+
+sled
+=======================
+V1.0 20180416. verify pass under CentOs7.3 
+
+dio
+=======================
+V1.0 20180416. verify pass under CentOs7.3.
+
+
+LM-sensor config file
+=======================
+V1.1 20180416. verify pass under CentOs7.3  
+    

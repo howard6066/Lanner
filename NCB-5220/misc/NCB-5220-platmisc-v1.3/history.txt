@@ -1,0 +1,15 @@
+Version history
+
+Version	Date			Description
+======= ======== 	==============================================================
+v1.3    20180910        1. pms.c modify module 2 string and separate fail result
+			2. remove smbus switch control code at pms test. 
+			(BIOS will switch to PMbus, utility do not change it)
+V1.2	20180816   	1. Remove FreeBSD support
+			2. Support Dynamic major number select	
+			3. fix pmbus without power module information, when one power module have been remove.
+			4. add pms -on/-off parameter for smbus switch set (for bypass test use)
+			5. hwm modify temperature display follow BIOS setup item
+			6. Modify LCM -show, for easy test. direct display string to line1/line2 as below:
+				Line1="Lanner-LCM--Test" 
+				Line2="1234567890ABCDEF"

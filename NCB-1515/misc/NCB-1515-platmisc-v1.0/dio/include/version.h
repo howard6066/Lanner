@@ -1,0 +1,3 @@
+#define PLATFORM_NAME "NCB-1515"
+#define CODE_VERSION "V1.0 20180416"
+

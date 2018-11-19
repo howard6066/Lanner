@@ -1,0 +1,3 @@
+#define PLATFORM_NAME "HMB-1000"
+#define CODE_VERSION "V1.0 20160713"
+

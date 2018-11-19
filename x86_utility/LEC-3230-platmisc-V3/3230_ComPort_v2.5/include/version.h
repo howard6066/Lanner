@@ -1,0 +1,3 @@
+#define PLATFORM_NAME "LEB-3230"
+#define CODE_VERSION "V2.5 2014-12-12"
+

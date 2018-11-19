@@ -1,0 +1,9 @@
+Version history
+
+Version	Date		Description
+======= ========================================================================
+V1.2	20180816   	1. Remove FreeBSD support
+			2. Support Dynamic major number select	
+			
+V1.0	20160718    1. Initial version, support DOS/FreeBSD 8.0 and Linux 2.4 and 2.6
+										Verify CentOS6.4 2.6.32 OK
