@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "gcc",
+            //"command": "make; clean",
+            //"command": "/home/factory_testbed/./make.sh", //makefile
+            "args": 
+            [
+                "-g", "-std=c99", "${file}", "-o", "${fileBasenameNoExtension}"
+                //"-g", "${file}", "-o", "${fileBasenameNoExtension}"
+                //"${fileDirname}" //makefile
+            ],
+            "group": 
+            {
+                "kind": "build",
+                "isDefault": true
+            },
+        }
+    ]
+}

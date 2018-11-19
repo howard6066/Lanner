@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "io.h": "c",
+        "ioctl.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "*.ch": "c",
+        "ratio": "c",
+        "typeindex": "c",
+        "thread": "c",
+        "fs.h": "c"
+    },
+   
+}
